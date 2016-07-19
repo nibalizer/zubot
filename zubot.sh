@@ -39,10 +39,6 @@ tail -f $botfile | openssl s_client -connect server:6697 | while true ; do
 case $cmd in
         "!help") echo "PRIVMSG $chan :!status !source !help" >> $botfile ;;
         "!source") echo "PRIVMSG $chan :https://github.com/nibalizer/zubot" >> $botfile ;;
-        "!doom")
-          echo -n "PRIVMSG $chan :" >> $botfile
-          cat doom.txt | sort -R | head -n 1 >> $botfile
-        ;;
         "!status") 
           status=$(python status.py)
           echo "PRIVMSG $chan :Pokemon server uptime is $status" >> $botfile 
