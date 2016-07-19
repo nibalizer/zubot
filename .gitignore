@@ -1,3 +1,4 @@
 tumblr
 .password
 config
+.nfs*
