@@ -11,10 +11,11 @@ else
   exit 1
 fi
 
-echo $channel
+echo server: $server
+echo channel: $channel
 rm $botfile
 mkfifo $botfile
-tail -f $botfile | openssl s_client -connect server:6697 | while true ; do
+tail -f $botfile | openssl s_client -connect $server:6697 | while true ; do
     if [ -z $started ] ; then
         echo "USER zubot 9 zubot zubot :" > $botfile
         echo "NICK zubot" > $botfile
