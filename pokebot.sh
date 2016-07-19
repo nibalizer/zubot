@@ -38,7 +38,7 @@ tail -f $botfile | openssl s_client -connect irc.cat.pdx.edu:6697 | while true ;
 
 case $cmd in
         "!help") echo "PRIVMSG $chan :!status !source !help" >> $botfile ;;
-        "!source") echo "PRIVMSG $chan :https://github.com/nibalizer/pokebot" >> $botfile ;;
+        "!source") echo "PRIVMSG $chan :https://github.com/nibalizer/zubot" >> $botfile ;;
         "!doom")
           echo -n "PRIVMSG $chan :" >> $botfile
           cat doom.txt | sort -R | head -n 1 >> $botfile
