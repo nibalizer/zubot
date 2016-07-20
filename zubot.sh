@@ -39,7 +39,10 @@ tail -f $botfile | openssl s_client -connect $server:6697 | while true ; do
 
 case $cmd in
         "!help") echo "PRIVMSG $chan :!status !uptime !source !help" >> $botfile ;;
-        "!source") echo "PRIVMSG $chan :https://github.com/nibalizer/zubot" >> $botfile ;;
+        "!source") 
+          echo "PRIVMSG $chan :Source Code: https://github.com/nibalizer/zubot" >> $botfile 
+          echo "PRIVMSG $chan :Uptime data: http://ispokemongodownornot.com/ courtesy of DataDog" >> $botfile 
+          ;;
         "!number") 
           data=$(python python/by_number.py "$args")
           echo "PRIVMSG $chan :$data" >> $botfile 
