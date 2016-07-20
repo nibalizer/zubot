@@ -46,7 +46,7 @@ case $cmd in
           ;;
         "!uptime") 
           percent=$(python uptime_percent.py)
-          echo "PRIVMSG $chan :Pokemon server uptime percent over 4 hours is $percent" >> $botfile 
+          echo "PRIVMSG $chan :Pokemon server uptime percent over 24 hours is $percent" >> $botfile 
           ;;
         "!status") 
           status=$(python status.py)
