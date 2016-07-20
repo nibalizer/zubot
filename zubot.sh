@@ -40,6 +40,10 @@ tail -f $botfile | openssl s_client -connect $server:6697 | while true ; do
 case $cmd in
         "!help") echo "PRIVMSG $chan :!status !uptime !source !help" >> $botfile ;;
         "!source") echo "PRIVMSG $chan :https://github.com/nibalizer/zubot" >> $botfile ;;
+        "!number") 
+          data=$(python python by_number.py $args)
+          echo "PRIVMSG $chan :$data" >> $botfile 
+          ;;
         "!uptime") 
           percent=$(python uptime_percent.py)
           echo "PRIVMSG $chan :Pokemon server uptime percent over 4 hours is $percent" >> $botfile 
