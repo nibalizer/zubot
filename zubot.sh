@@ -41,7 +41,7 @@ case $cmd in
         "!help") echo "PRIVMSG $chan :!status !uptime !source !help" >> $botfile ;;
         "!source") echo "PRIVMSG $chan :https://github.com/nibalizer/zubot" >> $botfile ;;
         "!number") 
-          data=$(python python by_number.py $args)
+          data=$(python python/by_number.py "$args")
           echo "PRIVMSG $chan :$data" >> $botfile 
           ;;
         "!uptime") 
