@@ -42,7 +42,7 @@ case $cmd in
         "!source") echo "PRIVMSG $chan :https://github.com/nibalizer/zubot" >> $botfile ;;
         "!status") 
           status=$(python status.py)
-          echo "PRIVMSG $chan :Pokemon server uptime is $status" >> $botfile 
+          echo "PRIVMSG $chan :Pokemon server status is $status" >> $botfile 
           ;;
     esac
     echo $irc
