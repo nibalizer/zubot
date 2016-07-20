@@ -2,3 +2,4 @@ tumblr
 .password
 config
 .nfs*
+*.pyc
